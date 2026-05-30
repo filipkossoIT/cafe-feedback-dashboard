@@ -215,3 +215,13 @@
     .tab { padding: 9px 13px; }
     .form-hero h1 { font-size: 25px; }
   }
+
+/* --- text inputs (added for auth + settings forms) --- */
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%; border: 2px solid var(--line); border-radius: 14px;
+  padding: 13px 14px; font-size: 15px; font-weight: 600; color: var(--ink);
+  background: var(--bg); transition: border-color .18s, box-shadow .18s;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+  outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); background: var(--surface);
+}
