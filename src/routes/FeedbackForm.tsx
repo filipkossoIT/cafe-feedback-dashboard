@@ -21,7 +21,7 @@ export default function FeedbackForm() {
   }
 
   const submit = () => {
-    if (!rating) return
+    if (!rating || done) return
     addFeedback({
       cafeId: cafe.id,
       rating: rating as Rating,
@@ -66,15 +66,15 @@ export default function FeedbackForm() {
                 <StarRating value={rating} onChange={setRating} />
               </div>
               <div className="field">
-                <label className="field-label">What's it about?</label>
-                <select value={category} onChange={(e) => setCategory(e.target.value)}>
+                <label className="field-label" htmlFor="fb-category">What's it about?</label>
+                <select id="fb-category" value={category} onChange={(e) => setCategory(e.target.value)}>
                   <option value="" disabled>Choose a category…</option>
                   {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
                 </select>
               </div>
               <div className="field">
-                <label className="field-label">Tell us more <span className="opt">optional</span></label>
-                <textarea value={comment} onChange={(e) => setComment(e.target.value)} placeholder="What did you love? What could we do better?" maxLength={600} />
+                <label className="field-label" htmlFor="fb-comment">Tell us more <span className="opt">optional</span></label>
+                <textarea id="fb-comment" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="What did you love? What could we do better?" maxLength={600} />
               </div>
               <button className="btn-primary" disabled={!rating} onClick={submit}>
                 {rating ? 'Send feedback' : 'Pick a rating to continue'}

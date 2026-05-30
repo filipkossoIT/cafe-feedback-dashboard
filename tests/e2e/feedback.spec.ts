@@ -25,6 +25,7 @@ test('signup → submit feedback → dashboard reflects it → logout guard → 
   // Dashboard reflects it
   await page.goto('/dashboard')
   await expect(page.getByText('Lovely oat latte from a Playwright test.')).toBeVisible()
+  await expect(page.getByTestId('stat-total')).toHaveText('1')
 
   // Logout → protected route redirects to login
   await page.goto('/settings')
