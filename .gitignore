@@ -20,3 +20,15 @@ desktop.ini
 node_modules/
 dist/
 build/
+
+# Test artifacts
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+coverage/
+
+# Env
+.env
+.env.local
+.env.*.local
