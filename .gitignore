@@ -1,0 +1,22 @@
+# Worktrees (isolated workspaces — never track)
+.worktrees/
+worktrees/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Dependencies / build output (in case a build step is added later)
+node_modules/
+dist/
+build/
